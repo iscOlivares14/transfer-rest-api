@@ -113,7 +113,7 @@ termcolor==1.1.0
 toml==0.10.0
 twilio==6.0.0
 unittest-xml-reporting==2.1.0
-urllib3==1.23
+urllib3==1.24.2
 virtualenv==16.1.0
 visitor==0.1.2
 wcwidth==0.1.6
