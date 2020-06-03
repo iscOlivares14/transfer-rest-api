@@ -4,7 +4,7 @@ import os
 import sys
 
 from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager, Shell, Server
+from flask_script import Manager, Server
 
 from app import create_app, db
 from app.models import (
@@ -43,10 +43,12 @@ def test():
 def seed():
     db.session.commit()
 
+
 @manager.command
 def urlmap():
     """Print url map."""
     print(app.url_map)
+
 
 # manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command("db", MigrateCommand)
@@ -58,7 +60,6 @@ app.debug = True
 if __name__ == "__main__":
     def my_handler(type, value, tb):
         app.logger.error("Uncaught exception: {0}".format(str(value)))
-
 
     # Install exception handler
     sys.excepthook = my_handler
